@@ -23,16 +23,23 @@ while key != ord('q'):
         # fill in the conditions to increment/decrement throttle/steer
 
 	if key == curses.KEY_UP:
-            forward = 0        
+            forward = 0 
+	    print("key up ^\n")       
 	elif key == curses.KEY_DOWN:
             forward = 0 
+	    print("key down \/\n")
 	if key == curses.KEY_LEFT:
             left = 0
+	    print("left <-\n")
 	elif key == curses.KEY_RIGHT:
             left = 0
+	    print("right ->\n")
         elif key == curses.KEY_DC:
             # this key will center the steer and throttle
             forward = 0
+	elif key == 113:
+	    print("quit")
+	    break
 	msg = drive_param()
 	msg.velocity = forward
 	msg.angle = left
