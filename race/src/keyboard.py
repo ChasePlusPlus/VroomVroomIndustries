@@ -42,28 +42,28 @@ while key != ord('q'):
 	
 	
 	if key == curses.KEY_UP:
-	    if forward <= 100:
+	    if forward <= 100 and forward + increment <= 100:
 		forward += increment
 		print "Throttle up: ", forward, "\r" 
 	    else:
 		print "MAX THROTTLE", "\r"
     
 	elif key == curses.KEY_DOWN:
-	    if forward >= -100:
+	    if forward >= -100 and forward - increment >= -100:
                 forward -= increment
 	        print "Throttle down: ", forward, "\r"
 	    else:
 	        print "MAX REVERSE", "\r"
 
 	if key == curses.KEY_LEFT:
-	    if turn >= -100:
+	    if turn >= -100 and turn - increment >= -100:
             	turn -= increment
 	    	print "LEFT: ", turn, "\r"
 	    else:
 		print "MAX LEFT", "\r"
 
 	elif key == curses.KEY_RIGHT:
-            if turn <= 100:
+            if turn <= 100 and turn + increment <= 100:
             	turn += increment
 	    	print "RIGHT: ", turn, "\r"
 	    else:
