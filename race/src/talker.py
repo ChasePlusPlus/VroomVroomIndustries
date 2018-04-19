@@ -13,7 +13,7 @@ What you should do:
  3. Publish the calculated PWM values on topic "drive_pwm" using custom message drive_values
 """
 
-def params_callback(data)
+def params_callback(data):
     global velocity, turn
     velocity = 100
     turn = 100
@@ -22,6 +22,7 @@ def params_callback(data)
 class Talker():
 
     def __init__(self):
+        global velocity, turn
 
         rospy.init_node('Talker', anonymous=False)
 
@@ -29,11 +30,14 @@ class Talker():
 
         rospy.on_shutdown(self.shutdown)
 
-        self.params = rospy.Subscriber('/drive_parameters', drive_params,
+        rospy.loginfo('HERE')
+        self.params = rospy.Subscriber('drive_parameters', drive_param,
                                        params_callback)
 
-        self.pwm = rospy.Publisher('/drive_pwm', drive_values, queue_size=10)
+        rospy.loginfo('HERE')
+        self.pwm = rospy.Publisher('drive_pwm', drive_values, queue_size=10)
 
+        rospy.loginfo('HERE')
         rate = rospy.Rate(10)
 
         rospy.loginfo('Set rate 10Hz')
@@ -43,12 +47,13 @@ class Talker():
         while not rospy.is_shutdown():
             print velocity
             print turn
+            rospy.loginfo('HERE')
             rate.sleep()
 
     def shutdown(self):
         rospy.loginfo('Stopping the turtle')
 
-        self.cmd_vel.publish(drive_values())
+        # self.pwm.publish(drive_values())
 
         rospy.sleep(1)
 
