@@ -15,8 +15,8 @@ What you should do:
 
 def params_callback(data):
     global velocity, turn
-    velocity = 100
-    turn = 100
+    velocity = data.velocity
+    turn = data.angle
 
 
 class Talker():
@@ -45,15 +45,20 @@ class Talker():
         pwm_values = drive_values()
 
         while not rospy.is_shutdown():
-            print velocity
-            print turn
-            rospy.loginfo('HERE')
+            rospy.loginfo('Velocity: {}'.format(velocity))
+            pwm_drive = 9381 + int(32.77 * velocity)
+            pwm_values.pwm_drive = pwm_drive
+            rospy.loginfo('Velocity PWM: {}'.format(pwm_values.pwm_drive))
+            rospy.loginfo('Angle: {}'.format(turn))
+            pwm_values.pwm_angle = 9381 + int(32.77 * turn)
+            rospy.loginfo('Angle PWM: {}'.format(pwm_values.pwm_angle))
+            self.pwm.publish(pwm_values)
             rate.sleep()
 
     def shutdown(self):
         rospy.loginfo('Stopping the turtle')
 
-        # self.pwm.publish(drive_values())
+        self.pwm.publish(drive_values())
 
         rospy.sleep(1)
 
