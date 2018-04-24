@@ -46,11 +46,11 @@ class Talker():
 
         while not rospy.is_shutdown():
             rospy.loginfo('Velocity: {}'.format(velocity))
-            pwm_drive = 9381 + int(32.77 * velocity)
+            pwm_drive = 9831 + int(32.77 * velocity)
             pwm_values.pwm_drive = pwm_drive
             rospy.loginfo('Velocity PWM: {}'.format(pwm_values.pwm_drive))
             rospy.loginfo('Angle: {}'.format(turn))
-            pwm_values.pwm_angle = 9381 + int(32.77 * turn)
+            pwm_values.pwm_angle = 9831 + int(32.77 * turn)
             rospy.loginfo('Angle PWM: {}'.format(pwm_values.pwm_angle))
             self.pwm.publish(pwm_values)
             rate.sleep()

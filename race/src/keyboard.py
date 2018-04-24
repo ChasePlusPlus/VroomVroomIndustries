@@ -12,7 +12,7 @@ n = raw_input("Change increment? ")
 if n == "":
    print "default set to 0.1", "\r"
 else:
-   increment = int(n)
+   increment = float(n)
    print "increment set to: ", increment, "\r"
 
 
