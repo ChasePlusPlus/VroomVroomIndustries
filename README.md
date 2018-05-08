@@ -6,13 +6,13 @@ We all coded together off of two laptops. We coded remotely off the car and push
 	
 # Building the car: 
 First we started by building the car in class. We've compiled a video of a couple of pictures describing the process. 
-<VIDEO HERE>
+VIDEO HERE
 
 # Keyboard Control: 
 This assignment took us a few days to get functioning properly. After about three hours, we achieved code that we thought should be working. We decided to take the code to the TA's office hours the next day, but found from another classmate that there was an error in the given number for PWM conversion. Once we fixed that value, it worked for assignment. 
 
 The demo did not go over as well because our battery died. We have a couple videos of our car working in the classroom from a few days prior to the assignment being due. 
-<VIDEO HERE>
+VIDEO HERE
 	
 Talker.py:
 We implemented the talker using the formula given to convert the output to PWM values and code similar to that of the TurtleBot. 
