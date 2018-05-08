@@ -22,6 +22,7 @@ We implemented the keyboard file by using a series of if/elif statements. Using 
 		
 # Vroom Vroom Industries Goes Autonomous. 
 We started this assignment a bit late because of everyone's finals, theses, and end of semester projects. After starting it on May 7th, we made a lot of progress before the assignment was due. 
+VIDEO HERE
 
 Control.py:
 		
