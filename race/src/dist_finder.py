@@ -8,7 +8,7 @@ from race.msg import pid_input
 # Some useful variable declarations.
 angle_range = 24  # sensor angle range of the lidar
 car_length = 1.5  # distance (in m) that we project the car forward for correcting the error. You may want to play with this.
-desired_trajectory = 1  # can change to .5	# distance from the wall (left or right - we cad define..but this is defined for right)
+desired_trajectory = .75  # can change to .5	# distance from the wall (left or right - we cad define..but this is defined for right)
 vel = 15
 error = 0.0
 
@@ -33,7 +33,7 @@ def getRange(data, theta):
     return data.ranges[intIndex]
 
 def callback(data):
-    theta = 50  # might want to change this
+    theta = 45  # might want to change this
     a = getRange(data, theta)
     b = getRange(data, 0)
     swing = math.radians(theta)
@@ -51,14 +51,7 @@ def callback(data):
     msg.pid_vel = vel
     pub.publish(msg)
 
-    # Your code goes here
 
-    # END
-
-    msg = pid_input()
-    msg.pid_error = error
-    msg.pid_vel = vel
-    pub.publish(msg)
 
 
 if __name__ == '__main__':

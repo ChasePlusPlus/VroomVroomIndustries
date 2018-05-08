@@ -40,6 +40,8 @@ def control(data):
 
     prev_error = pid_err
 
+    print "KP: ", kp, " KD: ", kd, "\r"
+
     msg = drive_param()
     msg.velocity = vel_input
     msg.angle = angle
