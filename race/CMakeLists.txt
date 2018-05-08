@@ -53,7 +53,7 @@ find_package(catkin REQUIRED COMPONENTS
 		FILES
 		drive_param.msg
 		drive_values.msg
-#    pid_input.msg
+    pid_input.msg
 	)
 
 ## Generate services in the 'srv' folder [we do not use these]
@@ -135,10 +135,10 @@ include_directories(
 
 ## Declare a C++ executable. This is C code that defines new nodes similar to talker.py in Python
 # add_executable(race_node src/race_node.cpp) # race_node is the node name , followed by the path to the src file.
-#add_executable(odom_scan_matcher src/getOdomFromMatcher.cpp)
-#add_executable(hectorOdom src/hectorOdom.cpp)
-#add_executable(amclOdom src/amclOdom.cpp)
-#add_executable(processScan src/process_scan.cpp)
+# add_executable(odom_scan_matcher src/getOdomFromMatcher.cpp)
+# add_executable(hectorOdom src/hectorOdom.cpp)
+# add_executable(amclOdom src/amclOdom.cpp)
+# add_executable(processScan src/process_scan.cpp)
 
 ## Add cmake target dependencies of the executable
 ## same as for the library above
@@ -148,7 +148,7 @@ include_directories(
 
 ## Specify libraries to link a library or executable target against
 # target_link_libraries(odom_scan_matcher
- #  ${catkin_LIBRARIES}
+#   ${catkin_LIBRARIES}
 # )
 # target_link_libraries(hectorOdom
 #   ${catkin_LIBRARIES}
