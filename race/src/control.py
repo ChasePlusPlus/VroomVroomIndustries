@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+from math import isnan
 
 import rospy
 from race.msg import drive_param
@@ -6,7 +7,7 @@ from race.msg import pid_input
 
 kp = 14.0
 kd = 0.09
-servo_offset = 18.5	# zero correction offset in case servo is misaligned.
+servo_offset = 18.5 	# zero correction offset in case servo is misaligned.
 prev_error = 0.0
 vel_input = 25.0
 
@@ -18,27 +19,32 @@ def control(data):
     global kp
     global kd
 
-    ## Your code goes here
+    # Your code goes here
     # 1. Scale the error
     # 2. Apply the PID equation on error
     # 3. Make sure the error is within bounds
     pid_err = data.pid_error
     error = pid_err * kp
-    errordot = kd * (pid_err - prev_error)
+    errordot = kd * (prev_error - pid_err)
 
     angle = error + errordot
+
 
     if angle < -100:
         angle = -100
     elif angle > 100:
         angle = 100
+    elif isnan(angle):
+        angle = 0
+
 
     prev_error = pid_err
 
-    msg = drive_param();
+    msg = drive_param()
     msg.velocity = vel_input
     msg.angle = angle
     pub.publish(msg)
+
 
 if __name__ == '__main__':
     global kp

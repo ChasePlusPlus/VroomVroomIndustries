@@ -26,7 +26,7 @@ def getRange(data, theta):
     if carTheta > 3 * math.pi / 4:
         carTheta = 3 * math.pi / 4
     elif carTheta < -3 * math.pi / 4:
-        carTheta = 3 * math.pi / 4
+        carTheta = -3 * math.pi / 4
 
     floatIndex = (carTheta + 3 * math.pi / 4) / data.angle_increment
     intIndex = int(floatIndex)
@@ -44,7 +44,7 @@ def callback(data):
     aToc = 1
     cTod = aTob + aToc * math.sin(alpha)
 
-    error = cTod - desired_trajectory
+    error = desired_trajectory - cTod
 
     msg = pid_input()
     msg.pid_error = error
