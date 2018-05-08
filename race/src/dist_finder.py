@@ -8,7 +8,7 @@ from race.msg import pid_input
 # Some useful variable declarations.
 angle_range = 24  # sensor angle range of the lidar
 car_length = 1.5  # distance (in m) that we project the car forward for correcting the error. You may want to play with this.
-desired_trajectory = .75  # can change to .5	# distance from the wall (left or right - we cad define..but this is defined for right)
+desired_trajectory = .5  # can change to .5	# distance from the wall (left or right - we cad define..but this is defined for right)
 vel = 15
 error = 0.0
 
@@ -23,7 +23,12 @@ def getRange(data, theta):
     # Do some error checking for NaN and ubsurd values
     # Your code goes here
     index = (30 + theta) * (len(data.ranges)/240)
-    return data.ranges(index)
+    val = data.ranges[index]
+    if math.isnan(val):
+        return 5
+    else:
+        return val
+    # return data.ranges(index)
     # carTheta = math.radians(theta) - math.pi/2
     # if carTheta > 3 * math.pi / 4:
     #     carTheta = 3 * math.pi / 4

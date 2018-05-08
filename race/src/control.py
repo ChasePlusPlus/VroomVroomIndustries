@@ -1,13 +1,11 @@
 #!/usr/bin/env python
-from math import isnan
-
 import rospy
 from race.msg import drive_param
 from race.msg import pid_input
 
 kp = 14.0
 kd = 0.09
-servo_offset = 18.5 	# zero correction offset in case servo is misaligned.
+servo_offset = 11
 prev_error = 0.0
 vel_input = 25.0
 
@@ -27,24 +25,21 @@ def control(data):
     error = pid_err * kp
     errordot = kd * (prev_error - pid_err)
 
-    angle = error + errordot
+    angle = servo_offset + (error + errordot)
 
 
     if angle < -100:
         angle = -100
     elif angle > 100:
         angle = 100
-    elif isnan(angle):
-        angle = 0
 
 
     prev_error = pid_err
 
-    print "KP: ", kp, " KD: ", kd, "\r"
-
+    print("angle: ", angle)
     msg = drive_param()
     msg.velocity = vel_input
-    msg.angle = angle
+    msg.angle = angle * -1
     pub.publish(msg)
 
 
