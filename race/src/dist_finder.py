@@ -22,15 +22,17 @@ def getRange(data, theta):
     # Return the lidar scan value at that index
     # Do some error checking for NaN and ubsurd values
     # Your code goes here
-    carTheta = math.radians(theta) - math.pi/2
-    if carTheta > 3 * math.pi / 4:
-        carTheta = 3 * math.pi / 4
-    elif carTheta < -3 * math.pi / 4:
-        carTheta = -3 * math.pi / 4
+    index = (30 + theta) * (len(data.ranges)/240)
+    return data.ranges(index)
+    # carTheta = math.radians(theta) - math.pi/2
+    # if carTheta > 3 * math.pi / 4:
+    #     carTheta = 3 * math.pi / 4
+    # elif carTheta < -3 * math.pi / 4:
+    #     carTheta = -3 * math.pi / 4
 
-    floatIndex = (carTheta + 3 * math.pi / 4) / data.angle_increment
-    intIndex = int(floatIndex)
-    return data.ranges[intIndex]
+    # floatIndex = (carTheta + 3 * math.pi / 4) / data.angle_increment
+    # intIndex = int(floatIndex)
+    # return data.ranges[intIndex]
 
 def callback(data):
     theta = 45  # might want to change this
@@ -45,6 +47,8 @@ def callback(data):
     cTod = aTob + aToc * math.sin(alpha)
 
     error = desired_trajectory - cTod
+
+    print(error)
 
     msg = pid_input()
     msg.pid_error = error
