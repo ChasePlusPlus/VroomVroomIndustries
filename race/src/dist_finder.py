@@ -8,7 +8,7 @@ from race.msg import pid_input
 # Some useful variable declarations.
 angle_range = 24  # sensor angle range of the lidar
 car_length = 1.5  # distance (in m) that we project the car forward for correcting the error. You may want to play with this.
-desired_trajectory = .5  # can change to .5	# distance from the wall (left or right - we cad define..but this is defined for right)
+desired_trajectory = 1  # can change to .5	# distance from the wall (left or right - we cad define..but this is defined for right)
 vel = 15
 error = 0.0
 
@@ -22,8 +22,8 @@ def getRange(data, theta):
     # Return the lidar scan value at that index
     # Do some error checking for NaN and ubsurd values
     # Your code goes here
-    index = int((theta + 45) / .25)
-    # index = (30 + theta) * (len(data.ranges)/240)
+   # index = int((theta + 45) / .125)
+    index = (30 + theta) * (len(data.ranges)/240)
     val = data.ranges[index]
     if math.isnan(val):
         return 50
@@ -31,22 +31,30 @@ def getRange(data, theta):
         return val
 
 def callback(data):
-    theta = 50  # might want to change this
+    theta = 60  # might want to change this
     omega = 90
+    vel = 15
     a = getRange(data, theta)
     b = getRange(data, 0)
-    print(b)
-    swing = math.radians(theta)
+    c = getRange(data, omega)
+    print("b: ", b)
+    print("omega: ", c)
 
+    swing = math.radians(theta)
+ 
 
     alpha = math.atan2(a * math.cos(swing) - b, a * math.sin(swing))
     AB = b * math.cos(alpha)
-    AC = .5
+    AC = 1
     CD = AB + AC * math.sin(alpha)
-    error = CD -  0.5
+    error = CD - 1
     # alpha = math.atan2(a * math.cos(swing) - b, a * math.sin(swing))
     # aTob = b * math.cos(alpha)
-
+    if c < .8:
+	print("obstruction! vel = 0")
+	vel = 0
+    else:
+	vel = 10
     # aToc = 1
     # cTod = aTob + aToc * math.sin(alpha)
 

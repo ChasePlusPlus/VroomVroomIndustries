@@ -8,7 +8,7 @@ kd = 0.09
 servo_offset = 11
 prev_error = 0.0
 vel_input = 25.0
-
+velo = 0
 pub = rospy.Publisher('drive_parameters', drive_param, queue_size=1)
 
 def control(data):
@@ -26,13 +26,19 @@ def control(data):
     errordot = kd * (prev_error - pid_err)
 
     angle = servo_offset + (error + errordot)
-
+    if data.pid_vel == 0:
+	velo = 0
+    else: 
+	velo = vel_input 
 
     if angle < -99:
         angle = -99
-    elif angle > 75:
-        angle = 75
-
+    elif angle > 99:
+        angle = 99
+    elif angle < 10 and angle > -10:
+	velo = vel_input + 10
+    elif angle > 80 and angle < -80:
+	velo = vel_input + 5
 
     prev_error = pid_err
 
@@ -40,7 +46,7 @@ def control(data):
 
     print("angle: ", angle)
     msg = drive_param()
-    msg.velocity = vel_input
+    msg.velocity = velo
     msg.angle = angle
     pub.publish(msg)
 
