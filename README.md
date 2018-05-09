@@ -16,9 +16,8 @@ We implemented the talker using the formula given to convert the output to PWM v
 Keyboard.py:
 We implemented the keyboard file by using a series of if/elif statements. Using the curses library offered by Python, we detected which key was being pressed and incrementally changed the values of forward to gradually go forwards or backwards (positive for forwards and negative for backwards). The same logic was used to change left or right. We also added a reset key for the PC and a reset value for the Mac. We had the ability to change the the increment as well, since as we were testing we wanted to find the optimal value of the increment as we were running the code on the car.
 		
-# Vroom Vroom Industries Goes Autonomous. 
+# Vroom Vroom Industries Goes Autonomous:
 We started this assignment a bit late because of everyone's finals, theses, and end of semester projects. After starting it on May 7th, we made a lot of progress before the assignment was due. 
-VIDEO HERE
 
 Control.py: 
 Our biggest issue was testing the kd, kp, and theta values to calculate the error properly. We spent a while testing and changing the values to avoid overcompensation and avoid swerving a lot when the car was supposed to be going straight.  The main issue we had was overcompensating to the right. To remedy this, we tried changing the viewing window (by changing theta).  
