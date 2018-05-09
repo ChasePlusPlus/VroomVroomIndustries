@@ -28,10 +28,10 @@ def control(data):
     angle = servo_offset + (error + errordot)
 
 
-    if angle < -100:
-        angle = -100
-    elif angle > 100:
-        angle = 100
+    if angle < -99:
+        angle = -99
+    elif angle > 99:
+        angle = 99
 
 
     prev_error = pid_err
@@ -39,7 +39,7 @@ def control(data):
     print("angle: ", angle)
     msg = drive_param()
     msg.velocity = vel_input
-    msg.angle = angle * -1
+    msg.angle = angle
     pub.publish(msg)
 
 

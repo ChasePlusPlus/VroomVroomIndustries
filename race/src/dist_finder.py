@@ -25,7 +25,7 @@ def getRange(data, theta):
     index = (30 + theta) * (len(data.ranges)/240)
     val = data.ranges[index]
     if math.isnan(val):
-        return 5
+        return 50
     else:
         return val
     # return data.ranges(index)
@@ -51,8 +51,7 @@ def callback(data):
     aToc = 1
     cTod = aTob + aToc * math.sin(alpha)
 
-    error = desired_trajectory - cTod
-
+    error = cTod - desired_trajectory
     print(error)
 
     msg = pid_input()
