@@ -29,6 +29,12 @@ We wrote this node primarily using formulas that we were given.
 Collision Detection:
 We implemented this pretty easily. The car stopped if it was a certain distance from an obstacle (velocity was set to 0). 
 
+Launch File:
+We created this. 
+
+Velocity PID:
+We implemented this by adding conditionals based on the angle in control.py. We then gradually changed the values of velocity depending on the condition. 
+
 # Results:
 Here is a video of DAVIS (Driving Autonomous Vehicle in Style) doing a laps around the track with one lap time being under 8 seconds:
 
@@ -36,4 +42,6 @@ Gif: [Sub-8 Run](https://i.imgur.com/0NghbBr.gifv)
 Video:
 [![Sub-8 Run](https://youtu.be/_lQ3kTyml7E.jpg)](https://youtu.be/_lQ3kTyml7E)
 
+After we got collision avoidance to work, the car avoided crashes for the rest of testing. If the car was going to run into the wall, it would stop. Please see the video for this.
+When we reset the car after continuing to fine tune, we discovered that the steering controls no longer responded. After talking to the TA in the morning, we found out that there was an issue with our servo. 
 
