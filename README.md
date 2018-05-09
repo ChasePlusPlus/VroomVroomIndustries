@@ -25,10 +25,14 @@ We started this assignment a bit late because of everyone's finals, theses, and 
 VIDEO HERE
 
 Control.py: 
-Our biggest issue was testing the kd, kp, and theta values. We spent a while testing and changing the values to avoid overcompensation and avoid swerving a lot when the car was supposed to be going straight. We didn't get this to perfectly work, especially at the point in the track where the track dips in on the other side of the finish line. The main issue we had was overcompensating to the right. To remedy this, we tried changing the viewing window (by changing theta).  
+Our biggest issue was testing the kd, kp, and theta values to calculate the error properly. We spent a while testing and changing the values to avoid overcompensation and avoid swerving a lot when the car was supposed to be going straight.  The main issue we had was overcompensating to the right. To remedy this, we tried changing the viewing window (by changing theta).  
+Eventually we were able to get the car to make two laps consecutively before crashing. After fiddling with the values more we were able to get the car to get a single lap time of 8 seconds. 
 		
 Dist_Finder.py:
 We wrote this node primarily using formulas that we were given. 
+
+Collision Detection:
+We implemented this pretty easily. The car stopped if it was a certain distance from an obstacle (velocity was set to 0). 
 
 # Results:
 Here is a video of DAVIS (Driving Autonomous Vehicle in Style) doing a laps around the track with one lap time being under 8 seconds:
