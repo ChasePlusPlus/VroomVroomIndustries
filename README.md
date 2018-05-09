@@ -3,10 +3,6 @@ Vroom Vroom Industries code for F1/10 Autonomous Racing
 
 # Team Effort:
 We all coded together off of two laptops. 
-	
-# Building the car: 
-First we started by building the car in class. We've compiled a video of a couple of pictures describing the process. 
-VIDEO HERE
 
 # Keyboard Control: 
 This assignment took us a few days to get functioning properly. After about three hours, we achieved code that we thought should be working. We decided to take the code to the TA's office hours the next day, but found from another classmate that there was an error in the given number for PWM conversion. Once we fixed that value, it worked for assignment. 
