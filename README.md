@@ -28,5 +28,10 @@ Control.py:
 Our biggest issue was testing the kd, kp, and theta values. We spent a while testing and changing the values to avoid overcompensation and avoid swerving a lot when the car was supposed to be going straight. We didn't get this to perfectly work, especially at the point in the track where the track dips in on the other side of the finish line. The main issue we had was overcompensating to the right. To remedy this, we tried changing the viewing window (by changing theta).  
 		
 Dist_Finder.py:
-We wrote this node primarily using formulas that we were given. 		
+We wrote this node primarily using formulas that we were given. 
+
+# Results:
+Here is a video of DAVIS (Driving Autonomous Vehicle in Style) doing a laps around the track with one lap time being under 8 seconds:
+
+<iframe class="imgur-embed" width="100%" height="338" frameborder="0" src="https://i.imgur.com/0NghbBr.gifv#embed"></iframe>
 		
