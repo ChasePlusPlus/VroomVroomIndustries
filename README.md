@@ -33,7 +33,7 @@ Launch File:
 We created this. 
 
 Velocity PID:
-We implemented this by adding conditionals based on the angle in control.py. We then gradually changed the values of velocity depending on the condition. 
+We implemented this by adding conditionals based on the angle in control.py. We then gradually changed the values of velocity depending on the condition. We do a slight boost to velocity when we are turning to hold a better line. 
 
 # Results:
 Here is a video of DAVIS (Driving Autonomous Vehicle in Style) doing a laps around the track with one lap time being under 8 seconds:
