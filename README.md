@@ -32,10 +32,6 @@ We implemented this pretty easily. The car stopped if it was a certain distance 
 # Results:
 Here is a video of DAVIS (Driving Autonomous Vehicle in Style) doing a laps around the track with one lap time being under 8 seconds:
 
-![Under 8 secs!](https://giphy.com/gifs/lcEAQXV1fxHvYMh2yt/html5)
-
-<a href="https://giphy.com/gifs/lcEAQXV1fxHvYMh2yt/html5"><img src="https://giphy.com/gifs/lcEAQXV1fxHvYMh2yt/html5" title="Under 8 secs!!"/></a>
-
-<iframe src="https://giphy.com/embed/lcEAQXV1fxHvYMh2yt" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/lcEAQXV1fxHvYMh2yt">via GIPHY</a></p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/_lQ3kTyml7E" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 
