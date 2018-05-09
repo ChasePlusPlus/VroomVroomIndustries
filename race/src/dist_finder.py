@@ -22,37 +22,35 @@ def getRange(data, theta):
     # Return the lidar scan value at that index
     # Do some error checking for NaN and ubsurd values
     # Your code goes here
-    index = (30 + theta) * (len(data.ranges)/240)
+    index = int((theta + 45) / .25)
+    # index = (30 + theta) * (len(data.ranges)/240)
     val = data.ranges[index]
     if math.isnan(val):
         return 50
     else:
         return val
-    # return data.ranges(index)
-    # carTheta = math.radians(theta) - math.pi/2
-    # if carTheta > 3 * math.pi / 4:
-    #     carTheta = 3 * math.pi / 4
-    # elif carTheta < -3 * math.pi / 4:
-    #     carTheta = -3 * math.pi / 4
-
-    # floatIndex = (carTheta + 3 * math.pi / 4) / data.angle_increment
-    # intIndex = int(floatIndex)
-    # return data.ranges[intIndex]
 
 def callback(data):
     theta = 45  # might want to change this
+    omega = 90
     a = getRange(data, theta)
     b = getRange(data, 0)
     swing = math.radians(theta)
 
+
     alpha = math.atan2(a * math.cos(swing) - b, a * math.sin(swing))
-    aTob = b * math.cos(alpha)
+    AB = b * math.cos(alpha)
+    AC = .5
+    CD = AB + AC * math.sin(alpha)
+    error = CD -  1
+    # alpha = math.atan2(a * math.cos(swing) - b, a * math.sin(swing))
+    # aTob = b * math.cos(alpha)
 
-    aToc = 1
-    cTod = aTob + aToc * math.sin(alpha)
+    # aToc = 1
+    # cTod = aTob + aToc * math.sin(alpha)
 
-    error = cTod - desired_trajectory
-    print(error)
+    # error = cTod - desired_trajectory
+    # print(error)
 
     msg = pid_input()
     msg.pid_error = error

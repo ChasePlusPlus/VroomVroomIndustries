@@ -21,7 +21,7 @@ def control(data):
     # 1. Scale the error
     # 2. Apply the PID equation on error
     # 3. Make sure the error is within bounds
-    pid_err = data.pid_error
+    pid_err = data.pid_error * 10
     error = pid_err * kp
     errordot = kd * (prev_error - pid_err)
 
