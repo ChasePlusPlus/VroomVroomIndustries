@@ -31,10 +31,11 @@ def getRange(data, theta):
         return val
 
 def callback(data):
-    theta = 45  # might want to change this
+    theta = 50  # might want to change this
     omega = 90
     a = getRange(data, theta)
     b = getRange(data, 0)
+    print(b)
     swing = math.radians(theta)
 
 
@@ -42,7 +43,7 @@ def callback(data):
     AB = b * math.cos(alpha)
     AC = .5
     CD = AB + AC * math.sin(alpha)
-    error = CD -  1
+    error = CD -  0.5
     # alpha = math.atan2(a * math.cos(swing) - b, a * math.sin(swing))
     # aTob = b * math.cos(alpha)
 

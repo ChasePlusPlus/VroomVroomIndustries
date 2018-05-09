@@ -30,11 +30,13 @@ def control(data):
 
     if angle < -99:
         angle = -99
-    elif angle > 99:
-        angle = 99
+    elif angle > 75:
+        angle = 75
 
 
     prev_error = pid_err
+
+    angle = angle
 
     print("angle: ", angle)
     msg = drive_param()
