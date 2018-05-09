@@ -33,7 +33,5 @@ We wrote this node primarily using formulas that we were given.
 # Results:
 Here is a video of DAVIS (Driving Autonomous Vehicle in Style) doing a laps around the track with one lap time being under 8 seconds:
 
-<a href="https://i.imgur.com/0NghbBr"><img src="https://i.imgur.com/0NghbBr.gifv" title="Under 8 secs!!"/></a>
-
-[url=https://imgur.com/0NghbBr]http://i.imgur.com/0NghbBr.gifv[/url]
+<a href="https://imgur.com/0NghbBr"><img src="http://i.imgur.com/0NghbBr.gifv" title="Under 8 secs!!"/></a>
 
