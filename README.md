@@ -2,7 +2,7 @@
 Vroom Vroom Industries code for F1/10 Autonomous Racing
 
 # Team Effort:
-We all coded together off of two laptops. We coded remotely off the car and pushed to Github when we felt it was ready to test. 
+We all coded together off of two laptops. 
 	
 # Building the car: 
 First we started by building the car in class. We've compiled a video of a couple of pictures describing the process. 
@@ -38,4 +38,5 @@ We implemented this pretty easily. The car stopped if it was a certain distance 
 Here is a video of DAVIS (Driving Autonomous Vehicle in Style) doing a laps around the track with one lap time being under 8 seconds:
 
 <a href="https://imgur.com/0NghbBr"><img src="http://i.imgur.com/0NghbBr.gifv" title="Under 8 secs!!"/></a>
+
 
