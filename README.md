@@ -39,6 +39,8 @@ Here is a video of DAVIS (Driving Autonomous Vehicle in Style) doing a laps arou
 
 ![Under 8 secs!](https://giphy.com/gifs/lcEAQXV1fxHvYMh2yt/html5)
 
-<a href="https://imgur.com/0NghbBr"><img src="http://i.imgur.com/0NghbBr.gifv" title="Under 8 secs!!"/></a>
+<a href="https://giphy.com/gifs/lcEAQXV1fxHvYMh2yt/html5"><img src="https://giphy.com/gifs/lcEAQXV1fxHvYMh2yt/html5" title="Under 8 secs!!"/></a>
+
+<iframe src="https://giphy.com/embed/lcEAQXV1fxHvYMh2yt" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/lcEAQXV1fxHvYMh2yt">via GIPHY</a></p>
 
 
