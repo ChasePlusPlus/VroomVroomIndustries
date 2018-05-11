@@ -40,7 +40,11 @@ Gif: [Sub-8 Run](https://i.imgur.com/0NghbBr.gifv)
 Video:
 [![Sub-8 Run](https://youtu.be/_lQ3kTyml7E.jpg)](https://youtu.be/_lQ3kTyml7E)
 
-After we got collision avoidance to work, the car avoided crashes for the rest of testing. If the car was going to run into the wall, it would stop. Please see the video link above for examples of laps where this functionality is demonstrated.
+After we got collision avoidance to work, the car avoided crashes for the rest of testing. If the car was going to run into the wall, it would stop. Please see the video link above for examples of laps where this functionality is demonstrated:
 
-Working deep into the early morning of race day (5am) to continue pushing our car/algorithms to put down consistent, quick laps, we discovered that the steering controls no longer responded to program or remote input. After talking to the TA in the morning, we found out that there was an issue with our servo for steering control.  
+https://youtu.be/FSRp31FZcr8
+
+The run ended in a Collusion, but that was because talker.py was stopped prematurely. But one can see that the car did not move until the object in front of it was moved. 
+
+Working deep into the early morning of race day (5am) to continue pushing our car/algorithms to put down consistent, quick laps, we discovered that the steering controls no longer responded to program or remote input. After talking to the TA in the morning, we found out that there was an issue with our servo for steering control.
 
